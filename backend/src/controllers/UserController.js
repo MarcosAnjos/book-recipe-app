@@ -8,7 +8,6 @@ module.exports = {
 
     return response.json(users)
   },
-
   async create(request, response) {
     const {
       name,
