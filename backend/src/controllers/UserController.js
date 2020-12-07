@@ -1,6 +1,5 @@
 const connection = require('../database/connection')
-const crypto = require('crypto')
-
+const generateUniqueId = require('../utils/generateUniqueId')
 
 module.exports = {
   async index(request, response) {
@@ -19,7 +18,7 @@ module.exports = {
 
     // console.log(name)
     // usar crypto para gerar ID de user
-    const id = crypto.randomBytes(4).toString('hex')
+    const id = generateUniqueId()
 
     // conexao com BD 
     await connection('users').insert({
